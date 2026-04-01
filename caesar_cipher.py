@@ -17,7 +17,7 @@ def encrypt(text:str, key:int)->str:
     testo_cifrato = []
 
     for c in testo:
-        if (c.isalpha()==True):
+        if c.isalpha() and c.isascii():
             if c.isupper()==True:
                 upper = True
                 testo_cifrato.append(characht(c, upper, key))
@@ -26,7 +26,7 @@ def encrypt(text:str, key:int)->str:
                 testo_cifrato.append(characht(c, upper, key))
 
         else: testo_cifrato.append(c)
-    return testo_cifrato
+    return ''.join(testo_cifrato)
 
 def main():
 
@@ -59,4 +59,5 @@ def main():
 
     print("Uscita dal programma.")
 
-main()
+if __name__ == "__main__":
+    main()
