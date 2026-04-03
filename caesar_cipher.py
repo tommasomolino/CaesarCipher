@@ -1,4 +1,4 @@
-def characht(c:str, upper:bool, key:int):
+def character(c:str, upper:bool, key:int):
     if upper==True:
         c = ord(c) - 65
         c = (c + key) % 26
@@ -20,10 +20,10 @@ def encrypt(text:str, key:int)->str:
         if c.isalpha() and c.isascii():
             if c.isupper()==True:
                 upper = True
-                testo_cifrato.append(characht(c, upper, key))
+                testo_cifrato.append(character(c, upper, key))
             else:
                 upper = False
-                testo_cifrato.append(characht(c, upper, key))
+                testo_cifrato.append(character(c, upper, key))
 
         else: testo_cifrato.append(c)
     return ''.join(testo_cifrato)
